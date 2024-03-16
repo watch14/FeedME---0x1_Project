@@ -1,18 +1,22 @@
 header {
     width: 100%;
-    border-bottom: 1px solid #CCCCCC;
     background: #DE5F35 ;
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    flex-shrink: 0;
+    box-shadow: #00000029 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+}
+
+.logo {
+    width: 100px;
+    height: 24px;
+    background: url(../../assets/images/logo-Cream.png) center/contain no-repeat;
 }
 
 .header_all {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-left: 2%;
-margin-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .header_logo {
@@ -24,8 +28,8 @@ margin-right: 2%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 0 30px;
-    width: 30%;
+    gap: 0 32px;
+    width: 32%;
 }
 
 .header_text p {
@@ -34,5 +38,5 @@ margin-right: 2%;
 }
 
 .header_text a {
-    text-decoration: none; /* Remove underline from anchor tags */
+    text-decoration: none;
 }
