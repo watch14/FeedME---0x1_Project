@@ -1,0 +1,38 @@
+header {
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    background: #DE5F35 ;
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    flex-shrink: 0;
+}
+
+.header_all {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-left: 2%;
+margin-right: 2%;
+}
+
+.header_logo {
+    width: 100px;
+    height: auto;
+}
+
+.header_text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 30px;
+    width: 30%;
+}
+
+.header_text p {
+    white-space: nowrap;
+    color: white;
+}
+
+.header_text a {
+    text-decoration: none; /* Remove underline from anchor tags */
+}
