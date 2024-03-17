@@ -4,7 +4,6 @@ footer {
     box-shadow: rgba(0, 0, 0, 0.16) 0px -3px 15px, rgba(0, 0, 0, 0.23) 0px -3px 15px;
 }
 
-
 .footer_all {
     display: flex;
     justify-content: space-between;
@@ -28,5 +27,5 @@ footer {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
