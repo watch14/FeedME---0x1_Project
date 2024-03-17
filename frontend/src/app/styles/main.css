@@ -11,11 +11,13 @@ body {
     flex-direction: column;
 }
 .container {
-    width: 100%;
-    max-width: 1000px;
-    flex: 1 0;
+    height: 100%;
+    max-width: 100%;
+    background-color: bisque;
+    margin: 0 10%;
 }
 
 p {
     font-size: 16px
 }
+
