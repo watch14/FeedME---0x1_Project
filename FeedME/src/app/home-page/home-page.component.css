@@ -6,7 +6,7 @@
 }
 
 .select {
-    margin: 44px 15%;
+    margin: 28px 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +40,7 @@ input[type=text] {
     width: 600px;
     height: 60px;
     margin: 10px 0 28px;
+    font-size: 24px;
     background: #FFFBE1;
     box-sizing: border-box;
     border: 3px solid#ff8b64;
@@ -47,7 +48,6 @@ input[type=text] {
     transition: 0.5s;
     outline: none;
     text-align: center;
-    padding-top: 8px;
 }
   
 input[type=text]:focus {
@@ -57,16 +57,22 @@ input[type=text]:focus {
 input::placeholder {
     white-space: nowrap;
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 500;
     opacity: 0.8;
     color: #4A4A4A;
 }
 
 
+textarea:focus, input:focus {
+    font-size: 24px;
+}
+
+
 
 
 .ingrediants {
+    margin: 8px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -101,27 +107,22 @@ button {
     border-radius: 5px;
     background: #DE5F35;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    text-decoration: none;
     color: #ffffff;
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 28px;
-    border-radius: 5px;
-    font-weight: bold;
     border: none;
-    border-bottom: 4px solid #de5f35;
+    border-bottom: 3px solid #de5f35;
+    border-left: 3px solid #de5f35;
     transition: 0.3s;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
     background-color: #e26f48;
     cursor: pointer;
-    margin-top: 12px;
+    margin-left: auto;
   }
   
 button:hover {
     box-shadow: 0 0 rgba(0, 0, 0, 0.4);
-    border-bottom-width: 2px;
+    border-bottom-width: 0.5px;
+    border-left-width: 0.5px;
     transform: translateY(2px);
   }
