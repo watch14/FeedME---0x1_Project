@@ -1,0 +1,46 @@
+header {
+    width: 100%;
+    background: #DE5F35 ;
+    box-shadow: #00000029 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    height: 24px;
+}
+
+
+.header_all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.header_logo {
+    width: 100px;
+    height: auto;
+}
+
+.header_text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 32px;
+    width: 32%;
+}
+
+p {
+    white-space: nowrap;
+    color: white;
+    font-size: 16px;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
