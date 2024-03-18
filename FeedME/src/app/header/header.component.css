@@ -15,7 +15,6 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4px 0;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -23,6 +22,8 @@ img {
 .header_logo {
     width: 100px;
     height: auto;
+    height: 20px;
+
 }
 
 .header_text {

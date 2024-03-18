@@ -1,0 +1,38 @@
+footer {
+    background-color: #DE5F35; 
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px -3px 15px, rgba(0, 0, 0, 0.23) 0px -3px 15px;
+    
+}
+
+.footer_all {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 10%;
+}
+
+.footer_all p {
+    white-space: nowrap;
+    color: white;
+}
+
+.footer_all a {
+    text-decoration: none;
+    height: 24px;
+}
+
+.subscribe {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+p {
+    white-space: nowrap;
+    color: white;
+    font-size: 16px;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
