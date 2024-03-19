@@ -2,6 +2,8 @@
     background-color: #fffbe1;
     max-width: 1300px;
     margin: 48px auto;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
 }
 
 .info {
