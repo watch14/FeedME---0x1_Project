@@ -1,0 +1,42 @@
+.recipe {
+    background-color: #fffbe1;
+    max-width: 1300px;
+    margin: 48px auto;
+}
+
+.info {
+    padding: 30px 5% 60px 5%;
+}
+
+.double-info {
+    display: flex;
+    position: relative;
+}
+
+img {
+    width: 555px;
+    height: 555px;
+    object-fit: cover;
+}
+
+.picture1 {
+    flex: 1;
+    margin-top: 0;
+}
+
+.description {
+    flex: 1;
+}
+
+.all-info {
+    padding: 0 50px;
+    position: absolute;
+}
+
+.lists {
+    display: flex;
+}
+
+.inst-info {
+    padding-left: 40px;
+}
