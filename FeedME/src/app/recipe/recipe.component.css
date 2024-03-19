@@ -12,7 +12,7 @@
 
 .double-info {
     display: flex;
-    position: relative;
+    flex-wrap: wrap;
 }
 
 img {
@@ -32,7 +32,6 @@ img {
 
 .all-info {
     padding: 0 50px;
-    position: absolute;
 }
 
 .lists {
