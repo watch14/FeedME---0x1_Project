@@ -1,7 +1,7 @@
 .random_recipes {
     display: flex;
     flex-direction: column;
-    margin: 60px 10%;
+    margin: 28px 10%;
 }
 
 p{
@@ -20,6 +20,7 @@ h1 {
     font-weight: 500;
     line-height: 19px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .all_food {
@@ -37,7 +38,7 @@ h1 {
     background-color: #FFFBE1;
     flex-flow: row wrap;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 260px;
     height: 274px;
