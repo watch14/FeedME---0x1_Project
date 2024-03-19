@@ -20,7 +20,7 @@ h1 {
     font-weight: 500;
     line-height: 19px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .all_food {
@@ -65,6 +65,8 @@ h1 {
 }
 
 .like {
+    width: 22px;
+    height: 20px;
     position: absolute;
     right: 0px;
 }
