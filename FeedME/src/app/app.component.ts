@@ -5,11 +5,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RandomRecipesComponent } from './random-recipes/random-recipes.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { CountryComponent } from './country/country.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, HomePageComponent, RandomRecipesComponent, RecipeComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HomePageComponent, RandomRecipesComponent, RecipeComponent, CountryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

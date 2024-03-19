@@ -1,0 +1,40 @@
+.country {
+    margin: 28px 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: #EDE9D0;*/
+}
+
+h1 {
+    white-space: nowrap;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+p{
+    white-space: nowrap;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+img {
+    width: 48px;
+    height: 48px;
+}
+.flags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px 28px;
+    margin-top: 0px;
+}
