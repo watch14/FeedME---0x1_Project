@@ -4,12 +4,14 @@
     margin: 28px 10%;
 }
 
-p{
+p, a{
     white-space: nowrap;
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 400;
     margin: 0px;
+    text-decoration: none;
+    color: black;
 }
 
 h1 {
