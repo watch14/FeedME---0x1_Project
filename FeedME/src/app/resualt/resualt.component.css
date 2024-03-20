@@ -67,31 +67,15 @@ h1 {
 }
 
 .like {
-    width: 22px;
-    height: 20px;
+    width: 20px;
     position: absolute;
-    
+    right: 0px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.image-container {
-    position: relative;
-    display: inline-block;
-  }
+.like:hover {
 
-  .image-container img {
-    display: block;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
+    background: url(../../assets/images/food/liked.svg);
 
-  .image-container img:hover {
-    transform: scale(1.1);
-  }
-
-  .image-container.clicked img {
-    transform: scale(1.1);
-  }
-
-  .image-container.clicked img:hover {
-    transform: scale(1);
-  }
+}
