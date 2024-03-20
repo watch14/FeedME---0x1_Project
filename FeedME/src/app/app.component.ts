@@ -7,6 +7,7 @@ import { RandomRecipesComponent } from './random-recipes/random-recipes.componen
 import { RecipeComponent } from './recipe/recipe.component';
 import { CountryComponent } from './country/country.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ResualtComponent } from './resualt/resualt.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
             RandomRecipesComponent, 
             RecipeComponent, 
             CountryComponent,
-            FavoritesComponent
+            FavoritesComponent,
+            ResualtComponent,
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

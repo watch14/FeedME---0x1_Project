@@ -106,18 +106,24 @@ button {
     border-radius: 5px;
     background: #DE5F35;
     white-space: nowrap;
-    color: #ffffff;
-    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 28px;
     border: none;
-
+    margin-left: auto;
     transition: 0.3s;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
     background-color: #e26f48;
     cursor: pointer;
-    margin-left: auto;
-  }
+}
   
 button:hover {
     background: #DE5F35;
-  }
+}
+
+.butt {
+    color: #ffffff;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 28px;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,74 @@
+.random_recipes {
+    display: flex;
+    flex-direction: column;
+    margin: 28px 10%;
+}
+
+p{
+    white-space: nowrap;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+h1 {
+    white-space: nowrap;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.all_food {
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 48px 64px;
+    padding: 28px 0px;
+
+}
+
+.food {
+    /*
+    */
+    background-color: #FFFBE1;
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 238px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+    padding: 14px;
+}
+
+
+.food_pic {
+    aspect-ratio: 2/2;
+    object-fit: cover;
+    width: 100%;
+    max-width: 232px;
+    border-radius: 10px;
+    
+}
+
+.food_like {
+    width: 232px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+}
+
+.like {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+}
