@@ -1,0 +1,40 @@
+.contact {
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 60px 15%;
+    font-size: 16px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+input[type=submit] {
+  background-color: #f36434;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type=submit]:hover {
+  background-color: #DE5F35;
+}
+
+.container {
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+
+}

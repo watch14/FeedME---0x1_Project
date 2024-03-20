@@ -4,6 +4,7 @@ import { RandomRecipesComponent } from './random-recipes/random-recipes.componen
 import { RecipeComponent } from './recipe/recipe.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ResualtComponent } from './resualt/resualt.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 export const routes: Routes = [
     {'path': '', component:HomePageComponent},
@@ -11,4 +12,5 @@ export const routes: Routes = [
     {'path': 'recipe' , component:RecipeComponent},
     {'path': 'favorite', component:FavoritesComponent},
     {'path': 'resualt', component:ResualtComponent},
+    {'path': 'contact_us', component:ContactUsComponent},
 ];
