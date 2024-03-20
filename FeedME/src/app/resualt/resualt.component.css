@@ -66,16 +66,14 @@ h1 {
     padding-top: 14px;
 }
 
+.like:hover {
+    background: url(../../assets/images/food/liked.svg);
+}
 .like {
     width: 20px;
     position: absolute;
     right: 0px;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
-.like:hover {
-
-    background: url(../../assets/images/food/liked.svg);
-
-}

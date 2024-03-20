@@ -67,8 +67,13 @@ h1 {
 }
 
 .like {
-    width: 22px;
-    height: 20px;
+    width: 20px;
     position: absolute;
     right: 0px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.like:hover {
+    background: url(../../assets/images/food/liked.svg);
 }
