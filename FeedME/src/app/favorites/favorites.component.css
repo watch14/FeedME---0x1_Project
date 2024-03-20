@@ -29,7 +29,7 @@ h1 {
     flex-flow: row wrap;
     justify-content: center;
     gap: 48px 64px;
-    margin-top: 28px;
+    padding: 28px;
 
 }
 
