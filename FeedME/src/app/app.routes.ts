@@ -8,5 +8,5 @@ export const routes: Routes = [
     {'path': '', component:HomePageComponent},
     {'path': 'random_recipes', component:RandomRecipesComponent},
     {'path': 'recipe' , component:RecipeComponent},
-    {'path': 'favorites', component:FavoritesComponent},
+    {'path': 'favorite', component:FavoritesComponent},
 ];

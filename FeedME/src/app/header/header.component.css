@@ -32,9 +32,10 @@ img {
     align-items: center;
     gap: 0 32px;
     width: 32%;
+    padding: 20px 0px;
 }
 
-p {
+p ,a{
     white-space: nowrap;
     color: white;
     font-size: 16px;
