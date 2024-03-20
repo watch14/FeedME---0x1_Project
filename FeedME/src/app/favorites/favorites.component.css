@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 28px 10%;
     letter-spacing: 0.2px;
+
 }
 
 p, a{
@@ -32,7 +33,7 @@ h1 {
     flex-flow: row wrap;
     justify-content: center;
     gap: 48px 64px;
-    padding-top: 28px 0px;
+    padding: 28px 0px;
 
 }
 
@@ -69,6 +70,9 @@ h1 {
     padding-top: 14px;
 }
 
+.like:hover {
+    background: url(../../assets/images/food/liked.svg);
+}
 .like {
     width: 20px;
     position: absolute;
@@ -77,6 +81,3 @@ h1 {
     transition: opacity 0.5s ease;
 }
 
-.like:hover {
-    background: url(../../assets/images/food/liked.svg);
-}
