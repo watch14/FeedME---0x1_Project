@@ -2,7 +2,7 @@ footer {
     background-color: #DE5F35; 
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px -3px 15px, rgba(0, 0, 0, 0.23) 0px -3px 15px;
-    
+    letter-spacing: 0.2px;
 }
 
 .footer_all {

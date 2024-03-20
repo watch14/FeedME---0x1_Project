@@ -1,0 +1,52 @@
+.about {
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 60px 15% 0px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 20px 4% 4%;
+    background-color: #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+    border: 2px solid #DE5F35;
+}
+
+
+body, h1, h2, p, ul, li {
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 10px;
+    margin: 0px;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+}
+
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+section {
+    padding: 20px;
+}
+
+section h2 {
+    color: #55433C;
+}
+
+section p {
+    color: #333;
+}
+
+section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
