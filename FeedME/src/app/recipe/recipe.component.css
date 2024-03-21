@@ -1,43 +1,61 @@
-.recipe {
+.container {
     background-color: #fffbe1;
-    max-width: 1300px;
-    margin: 48px auto;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+    max-width: 60%;
+    margin: auto;
+    margin-bottom: 48px;
+    padding-top: 35px;
+    padding-bottom: 55px;
+    
+    
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
-.info {
-    padding: 30px 5% 60px 5%;
+.inside {
+    max-width: 100%;
+    margin-left: 7.5%;
 }
 
-.double-info {
+.information {
+    max-width: 100%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+
     display: flex;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
 img {
+    max-width: 100%;
     width: 555px;
     height: 555px;
     object-fit: cover;
-}
+    border-radius: 7px;
 
-.picture1 {
     flex: 1;
-    margin-top: 0;
-}
-
-.description {
-    flex: 1;
-}
-
-.all-info {
-    padding: 0 50px;
 }
 
 .lists {
+    flex: 1;
+}
+
+.list1 {
     display: flex;
 }
 
+.list2 {
+    display: flex;
+}
+
+.par {
+    flex-wrap: wrap;
+}
+
 .inst-info {
-    padding-left: 40px;
+    padding-left: 30px;
+    max-width: 75%;
 }
