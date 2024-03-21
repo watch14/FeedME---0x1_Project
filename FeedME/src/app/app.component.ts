@@ -8,6 +8,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ResualtComponent } from './resualt/resualt.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CountryComponent } from './country/country.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
             FavoritesComponent,
             ResualtComponent,
             ContactUsComponent,
+            CountryComponent,
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
