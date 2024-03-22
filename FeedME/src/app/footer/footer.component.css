@@ -37,7 +37,14 @@ p {
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-input {
-    padding: 8px;
+#Bad{
+
+    margin: 0 auto;
+    border: auto;
+    border-color: #ee9577;
+    border-radius: 10px;
+    padding: 8px 30px 8px 16px;
     margin-bottom: 20px;
+   
+
 }

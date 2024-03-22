@@ -8,19 +8,27 @@ mat-spinner {
     display: flex;
     flex-direction: column;
     margin: 48px 10%;
-    letter-spacing: 0.2px;
+    /* letter-spacing: 0.2px; */
 
 }
 
 p, a{
+    text-overflow: ellipsis;
     cursor: pointer;
-    white-space: nowrap;
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     margin: 0px;
     text-decoration: none;
     color: black;
+}
+
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+    text-align: center;
 }
 
 h1 {
@@ -75,6 +83,8 @@ h1 {
     display: flex;
     justify-content: center;
     padding-top: 14px;
+    text-overflow: ellipsis;
+
 }
 
 .like:hover {

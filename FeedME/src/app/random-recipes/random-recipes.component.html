@@ -9,13 +9,25 @@
   <div class="all_food" *ngIf="!loading"> <!-- Only show recipes when not loading -->
 
     <div class="food" *ngFor="let meal of meals">
+
       <a (click)="redirectToRecipe(meal.meal_id)">
         <img class="food_pic" [src]="meal.image" alt="">
       </a>
+
       <div class="food_like">
-        <a (click)="redirectToRecipe(meal.meal_id)">{{ meal.name }}</a>
+
+        <a (click)="redirectToRecipe(meal.meal_id)">
+          <div class="name">
+              {{ meal.name }}
+            </div>
+          </a>
+
         <img class="like" src="../../assets/images/food/like.svg" alt="">
+
       </div>
+
     </div>
+
   </div>
+
 </div>
