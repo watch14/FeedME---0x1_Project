@@ -20,26 +20,54 @@ mat-spinner {
 }
 
 .img {
-    flex: 0 0 50%;
+    flex: 0 0 40%;
+    width: 300px;
 }
 
 img {
     width: 100%;
-    max-width: 100%;
     height: auto;
     border-radius: 7px;
 }
+
+.vid {
+    overflow: hidden;
+    border-radius: 7px; /* Maintain border radius by default */
+    margin: auto;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+
+  }
+  
+
+
 
 .lists {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-.list1{
-    padding-bottom: 40px;
-}
 
-.list1, .list2 {
+
+.list1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
+    gap: 16px; /* Adjust gap between items */
+    padding-bottom: 24px; /* Remove default padding */
+    font-weight: 500;
+  }
+  
+  .ingredient-list {
+    list-style: none; /* Remove default list styles */
+  }
+  
+  /* Optional: Add styling to list items */
+  .ingredient-list li {
+    border-radius: 5px;
+  }
+
+  
+ .list2 {
     display: flex;
     flex-wrap: wrap;
     gap: 28px;
@@ -63,14 +91,22 @@ h1 {
 }
 
 h2 {
+    color: #55433C;
+    font-weight: 600;
     font-size: 24px;
     margin: 0;
     padding-bottom: 12px;
 }
 
 
-ol, p {
+ul, p , .inst-info{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    margin: 0;
+    margin: 0px;
 }
+
+p, .inst-info{
+    line-height: 2; /* Adjust the line height */
+    letter-spacing: -0.2px; /* Adjust the letter spacing */
+}
+

@@ -7,12 +7,19 @@ import { RouterLink } from '@angular/router';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';
-
+import { LineBreakAfterPeriodPipe } from '../line-break-after-period.pipe';
+import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [RandomRecipesComponent,HttpClientModule, CommonModule, MatProgressSpinnerModule,],
+  imports: [RandomRecipesComponent,
+            HttpClientModule, 
+            CommonModule, 
+            MatProgressSpinnerModule,
+            LineBreakAfterPeriodPipe,
+            YouTubePlayerModule,
+          ],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.css'
 })
@@ -28,6 +35,7 @@ export class RecipeComponent {
     meal_id: string;
     description: string;
     youtube: string;
+    youtube_id: string;
     area: string;
     category: string;
     instructions: string;
@@ -38,6 +46,7 @@ export class RecipeComponent {
     meal_id: '',
     description: '',
     youtube: '',
+    youtube_id: '',
     area: '',
     category: '',
     instructions: '',
@@ -53,6 +62,11 @@ export class RecipeComponent {
       this.mealID = params['id'] || ''; // Assign params['name'] or an empty string if undefined
       console.log(this.mealID);
       this.fetchRandomRecipe();
+
+      //youtube player
+      const scriptTag = document.createElement('script');
+      scriptTag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(scriptTag);
     });
   }
 
@@ -67,6 +81,7 @@ export class RecipeComponent {
           this.meal.meal_id = this.mealID;
           this.meal.description = response.strInstructions;
           this.meal.youtube = response.strYoutube;
+          this.meal.youtube_id = response.youtube_id;
           this.meal.area = response.strArea;
           this.meal.category = response.strCategory;
           this.meal.ingredients = response.ingredients;
@@ -79,3 +94,5 @@ export class RecipeComponent {
       );
   }
 }
+
+
