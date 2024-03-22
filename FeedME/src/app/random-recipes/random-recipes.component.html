@@ -8,6 +8,9 @@
 
   <div class="all_food" *ngIf="!loading"> <!-- Only show recipes when not loading -->
 
+
+
+
     <div class="food" *ngFor="let meal of meals">
 
       <a (click)="redirectToRecipe(meal.meal_id)">
@@ -16,17 +19,19 @@
 
       <div class="food_like">
 
-        <a (click)="redirectToRecipe(meal.meal_id)">
+        <a class="res_name" (click)="redirectToRecipe(meal.meal_id)">
           <div class="name">
               {{ meal.name }}
             </div>
-          </a>
-
+        </a>
         <img class="like" src="../../assets/images/food/like.svg" alt="">
 
       </div>
 
     </div>
+
+
+
 
   </div>
 
