@@ -9,6 +9,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ResualtComponent } from './resualt/resualt.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CountryComponent } from './country/country.component';
+import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { CountryComponent } from './country/country.component';
             ResualtComponent,
             ContactUsComponent,
             CountryComponent,
+            MatProgressSpinnerModule
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
