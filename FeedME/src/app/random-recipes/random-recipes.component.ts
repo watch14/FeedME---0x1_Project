@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { Router } from '@angular/router';
+
 
 
 
@@ -16,16 +18,17 @@ import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/p
 })
 
 export class RandomRecipesComponent {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  meals: { name: string, image: string }[] = [];
+  meals: { name: string, image: string , meal_id: string}[] = [];
   loading = false; // Initialize loading flag
-  color: ThemePalette = 'primary';
-  mode: ProgressSpinnerMode = 'determinate';
-  value = 50;
-
+  
   ngOnInit() {
     this.fetchRandomRecipes();
+  }
+
+  redirectToRecipe(id: string) {
+    this.router.navigate(['/recipe'], { queryParams: { id: id } });
   }
 
   fetchRandomRecipes() {
@@ -36,9 +39,9 @@ export class RandomRecipesComponent {
         console.log(data);
         this.meals = data.map(meal => ({
           name: meal.strMeal,
-          image: meal.strMealThumb
+          image: meal.strMealThumb,
+          meal_id: meal.meal_id,
         }));
-        console.log(this.meals);
         this.loading = false; // Set loading flag to false after data is fetched
       },
       (error) => {

@@ -1,35 +1,26 @@
-<div class="container">
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<div class="container" *ngIf="!loading">
     <div class="inside">
-        <h1 class="Title">Recipe Title</h1>
+      <h1 class="Title">{{ meal.name }}</h1>
     </div>
-
+  
     <div class="information">
-        <div class="img">
-            <img src="../../assets/images/food/cc70eaf1736c8ee808f2bef4d355d172.jpg" alt="loading">
+      <div class="img">
+        <img [src]="meal.image" alt="{{ meal.name }}">
+      </div>
+      <div class="lists">
+        <h2>Ingredients:</h2>
+        <div class="list1">
+          <ol *ngFor="let ingredient of meal.ingredients">{{ ingredient }}</ol>
         </div>
-        <div class="lists">
-            <h2>Ingredients:</h2>
-            <div class="list1">
-                <ol>Ingredient 1</ol>
-                <ol>Ingredient 2</ol>
-                <ol>Ingredient 3</ol>
-            </div>
-            <div class="list2">
-                <ol>Ingredient 4</ol>
-                <ol>Ingredient 5</ol>
-                <ol>Ingredient 6</ol>
-            </div>
-            <div class="par">
-                <h2>Instructions:</h2>
-                <p class="inst-info">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Integer convallis tempor varius. Vestibulum ante ipsum primis 
-                        in faucibus orci luctus et ultrices posuere. Lorem ipsum dolor sit 
-                        amet, consectetur adipiscing elit. Integer convallis tempor varius.
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-                        posuere.</p>
-            </div>
+        <div class="par">
+          <h2>Instructions:</h2>
+          <p class="inst-info">{{ meal.description }}</p>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
 
-<app-random-recipes></app-random-recipes>
+<!-- <app-random-recipes></app-random-recipes> -->

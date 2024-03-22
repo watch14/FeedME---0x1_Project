@@ -1,16 +1,15 @@
-
 <div class="random_recipes">
-    <mat-spinner *ngIf="loading==true"></mat-spinner>
-    <h1 *ngIf="!loading">Random Recipes</h1>
-    <div class="all_food" *ngIf="!loading"> <!-- Only show recipes when not loading -->
-      <div class="food" *ngFor="let meal of meals">
-        <a [routerLink]="['/recipe']">
-          <img class="food_pic" [src]="meal.image" alt="">
-        </a>
-        <div class="food_like">
-          <a [routerLink]="['/recipe']">{{ meal.name }}</a>
-          <img class="like" src="../../assets/images/food/like.svg" alt="">
-        </div>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+  <h1 *ngIf="!loading">Random Recipes</h1>
+  <div class="all_food" *ngIf="!loading"> <!-- Only show recipes when not loading -->
+    <div class="food" *ngFor="let meal of meals">
+      <a (click)="redirectToRecipe(meal.meal_id)">
+        <img class="food_pic" [src]="meal.image" alt="">
+      </a>
+      <div class="food_like">
+        <a (click)="redirectToRecipe(meal.meal_id)">{{ meal.name }}</a>
+        <img class="like" src="../../assets/images/food/like.svg" alt="">
       </div>
     </div>
   </div>
+</div>
