@@ -6,7 +6,7 @@
 
       <!-- Display the autocomplete input -->
       <mat-form-field class="field">
-        <mat-label>Type Here</mat-label>
+        <mat-label>Type Here ...</mat-label>
         <input matInput
                 id="ingredientInput"
                 aria-label="Ingredient"
@@ -14,7 +14,7 @@
                 [formControl]="ingredientCtrl"
                 (input)="onInputChange($event)">
   
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" class="auto">
             <mat-option *ngFor="let ingredient of filteredIngredients" [value]="ingredient" (click)="onOptionSelected(ingredient)">
                 <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
                 <span>{{ ingredient.name }}</span>
@@ -23,7 +23,7 @@
         </mat-form-field>
 
         <!-- Display the input for selected ingredients -->
-        <h2>Your Ingredients:</h2>
+        <h3>Your Ingredients:</h3>
 
         <div class="selected-ingredients-container">
 
@@ -44,7 +44,7 @@
 
 
     <button>
-        <a  class="butt" [routerLink]="['/resualt']">Submit Ingrediant </a>
+        <a  class="butt" [routerLink]="['/resualt']">Submit Ingrediants</a>
     </button>
     
 
