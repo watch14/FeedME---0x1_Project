@@ -1,28 +1,53 @@
-<div class="container">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Ingredients</mat-label>
+<div class="select">
+
+    <h1>Choose Your Ingredient</h1>
+    
+    
+
+      <!-- Display the autocomplete input -->
+      <mat-form-field class="field">
+        <mat-label>Type Here</mat-label>
         <input matInput
-               aria-label="Ingredient"
-               [matAutocomplete]="auto"
-               [formControl]="ingredientCtrl">
-               
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let ingredient of filteredIngredients | async" [value]="ingredient" (onSelectionChange)="onOptionSelected($event, ingredient)">
-            <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
-            <span>{{ ingredient.name }}</span>
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
+                id="ingredientInput"
+                aria-label="Ingredient"
+                [matAutocomplete]="auto"
+                [formControl]="ingredientCtrl"
+                (input)="onInputChange($event)">
   
-      <p>Selected Ingredients:</p>
-      <div class="selected-ingredients-container">
-        <div *ngFor="let selectedIngredient of selectedIngredients">
-          <img alt="" class="example-option-img" [src]="selectedIngredient.image" height="25">
-          <span>{{ selectedIngredient.name }}</span>
-          <img (click)="removeSelectedIngredient(selectedIngredient)" class="close" src="../../assets/images/ingredients/cross.png">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let ingredient of filteredIngredients" [value]="ingredient" (click)="onOptionSelected(ingredient)">
+                <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
+                <span>{{ ingredient.name }}</span>
+                </mat-option>
+             </mat-autocomplete>
+        </mat-form-field>
+
+        <!-- Display the input for selected ingredients -->
+        <h2>Your Ingredients:</h2>
+
+        <div class="selected-ingredients-container">
+
+            <div class="ingrid" *ngFor="let selectedIngredient of selectedIngredients">
+
+                <img alt="" class="example-img" [src]="selectedIngredient.image" height="25">
+
+                <span>{{ selectedIngredient.name }}</span>
+
+                <img (click)="removeSelectedIngredient(selectedIngredient)" class="close" src="../../assets/images/ingrediants/cross.png">
+                
+            </div>
         </div>
-      </div>
-    </form>
-  </div>
+  
+
+
+
+
+
+    <button>
+        <a  class="butt" [routerLink]="['/resualt']">Submit Ingrediant </a>
+    </button>
+    
+
+</div>
+
   
