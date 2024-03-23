@@ -5,7 +5,7 @@
     
 
       <!-- Display the autocomplete input -->
-      <mat-form-field class="field">
+      <mat-form-field class="field" >
         <mat-label>Type Here ...</mat-label>
         <input matInput
                 id="ingredientInput"
@@ -23,8 +23,6 @@
         </mat-form-field>
 
         <!-- Display the input for selected ingredients -->
-        <h3>Your Ingredients:</h3>
-
         <div class="selected-ingredients-container">
 
             <div class="ingrid" *ngFor="let selectedIngredient of selectedIngredients">
