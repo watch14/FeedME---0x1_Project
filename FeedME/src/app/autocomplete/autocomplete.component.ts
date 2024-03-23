@@ -7,11 +7,12 @@ import {AsyncPipe, CommonModule} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-export interface State {
-  flag: string;
+export interface Ingredient {
   name: string;
-  population: string;
+  image: string;
 }
 
 /**
@@ -33,57 +34,57 @@ export interface State {
     CommonModule
   ],
 })
-export class AutocompleteOverviewExample {
-  stateCtrl = new FormControl('');
-  filteredStates: Observable<State[]>;
-  selectedStates: State[] = [];
 
-  states: State[] = [
-    {
-      name: 'Arkansas',
-      population: '2.978M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg'
-    },
-    {
-      name: 'California',
-      population: '39.14M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg'
-    },
-    {
-      name: 'Florida',
-      population: '20.27M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg'
-    },
-    {
-      name: 'Texas',
-      population: '27.47M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
-    },
-  ];
 
-  constructor() {
-    this.filteredStates = this.stateCtrl.valueChanges.pipe(
+
+export class AutocompleteComponent implements OnInit {
+  ingredientCtrl = new FormControl('');
+  filteredIngredients: Observable<Ingredient[]>;
+  selectedIngredients: Ingredient[] = [];
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.filteredIngredients = this.ingredientCtrl.valueChanges.pipe(
       startWith(''),
-      map(state => (state && state.length >= 3 ? this._filterStates(state) : []))
+      map(ingredient => (ingredient && ingredient.length >= 3 ? this._filterIngredients(ingredient) : []))
     );
+
+    this.fetchIngredients();
   }
 
-  private _filterStates(value: string): State[] {
+  private fetchIngredients(): void {
+    this.http.get<Ingredient[]>('http://127.0.0.1:9000/ingredients')
+      .subscribe(ingredients => {
+        this.selectedIngredients = ingredients;
+      });
+  }
+
+  private _filterIngredients(value: string): Ingredient[] {
     const filterValue = value.toLowerCase();
-    return this.states.filter(state => state.name.toLowerCase().includes(filterValue)).slice(0, 2);
+    return this.selectedIngredients.filter(ingredient => ingredient.name.toLowerCase().includes(filterValue)).slice(0, 2);
   }
 
-  removeSelectedState(state: State) {
-    const index = this.selectedStates.indexOf(state);
+  removeSelectedIngredient(ingredient: Ingredient) {
+    const index = this.selectedIngredients.indexOf(ingredient);
     if (index >= 0) {
-      this.selectedStates.splice(index, 1);
+      this.selectedIngredients.splice(index, 1);
     }
   }
 
-  addSelectedState(state: State) {
-    if (!this.selectedStates.some(s => s.name === state.name)) {
-      this.selectedStates.push(state);
-      this.stateCtrl.setValue(''); // Reset the input text
+  addSelectedIngredient(ingredient: Ingredient) {
+    // Check if the ingredient is already selected
+    const selectedIngredient = this.ingredientCtrl.value as Ingredient | null;
+    if (selectedIngredient && selectedIngredient.name === ingredient.name) {
+      if (!this.selectedIngredients.some(s => s.name === ingredient.name)) {
+        this.selectedIngredients.push(ingredient);
+        this.ingredientCtrl.setValue(''); // Reset the input text
+      }
     }
+  }
+
+  onOptionSelected(event: any, ingredient: Ingredient) {
+    event.stopPropagation();
+    this.addSelectedIngredient(ingredient);
   }
 }

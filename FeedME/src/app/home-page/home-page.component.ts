@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CountryComponent } from '../country/country.component';
 import { RandomRecipesComponent } from '../random-recipes/random-recipes.component';
-import { AutocompleteOverviewExample } from '../autocomplete/autocomplete.component';
+import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +11,7 @@ import { AutocompleteOverviewExample } from '../autocomplete/autocomplete.compon
             RouterModule,
             RandomRecipesComponent,
             CountryComponent,
-            AutocompleteOverviewExample
+            AutocompleteComponent
           ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'

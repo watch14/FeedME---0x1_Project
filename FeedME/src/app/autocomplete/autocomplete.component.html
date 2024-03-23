@@ -3,26 +3,26 @@
       <mat-form-field class="example-full-width">
         <mat-label>Ingredients</mat-label>
         <input matInput
-               aria-label="State"
+               aria-label="Ingredient"
                [matAutocomplete]="auto"
-               [formControl]="stateCtrl">
+               [formControl]="ingredientCtrl">
                
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let state of filteredStates | async" [value]="state" (onSelectionChange)="addSelectedState(state)">
-            <img alt="" class="example-option-img" [src]="state.flag" height="25">
-            <span>{{state.name}}</span> |
-            <small>Population: {{state.population}}</small>
+          <mat-option *ngFor="let ingredient of filteredIngredients | async" [value]="ingredient" (onSelectionChange)="onOptionSelected($event, ingredient)">
+            <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
+            <span>{{ ingredient.name }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
   
-      <p>Selected States:</p>
-      <div class="selected-states-container">
-        <div *ngFor="let selectedState of selectedStates">
-          <img alt="" class="example-option-img" [src]="selectedState.flag" height="25">
-          <span>{{ selectedState.name }}</span>
-          <button (click)="removeSelectedState(selectedState)">Remove</button>
+      <p>Selected Ingredients:</p>
+      <div class="selected-ingredients-container">
+        <div *ngFor="let selectedIngredient of selectedIngredients">
+          <img alt="" class="example-option-img" [src]="selectedIngredient.image" height="25">
+          <span>{{ selectedIngredient.name }}</span>
+          <img (click)="removeSelectedIngredient(selectedIngredient)" class="close" src="../../assets/images/ingredients/cross.png">
         </div>
       </div>
     </form>
-</div>
+  </div>
+  
