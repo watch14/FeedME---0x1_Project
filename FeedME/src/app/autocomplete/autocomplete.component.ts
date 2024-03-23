@@ -44,25 +44,27 @@ export class AutocompleteComponent {
   filteredIngredients: Ingredient[] = [];
   selectedIngredients: Ingredient[] = [];
   @ViewChild('auto') auto!: MatAutocompleteTrigger;
+  meals: { name: string, image: string , meal_id: string}[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
+  
   ngOnInit(): void {
     this.fetchIngredients();
   }
-
+  
   private fetchIngredients(): void {
     this.http.get<Ingredient[]>('http://127.0.0.1:9000/ingredients')
-      .subscribe(ingredients => {
-        this.allIngredients = ingredients;
-        this.filteredIngredients = [...this.allIngredients];
-      });
+    .subscribe(ingredients => {
+      this.allIngredients = ingredients;
+      this.filteredIngredients = [...this.allIngredients];
+    });
   }
-
+  
   onOptionSelected(ingredient: Ingredient) {
     this.addSelectedIngredient(ingredient);
   }
-
+  
   removeSelectedIngredient(ingredient: Ingredient) {
     const index = this.selectedIngredients.indexOf(ingredient);
     if (index !== -1) {
@@ -70,7 +72,7 @@ export class AutocompleteComponent {
       this.filteredIngredients.push(ingredient); // Add the ingredient back to filteredIngredients
     }
   }
-
+  
   addSelectedIngredient(ingredient: Ingredient) {
     if (!this.selectedIngredients.some(s => s.name === ingredient.name)) {
       this.selectedIngredients.push(ingredient);
@@ -78,7 +80,7 @@ export class AutocompleteComponent {
       this.ingredientCtrl.setValue(''); // Reset the input text
     }
   }
-
+  
   onInputChange(event: any) {
     const inputText = event.target.value.trim();
     if (inputText.length >= 1) {
@@ -89,17 +91,47 @@ export class AutocompleteComponent {
       this.auto.closePanel();
     }
   }
-
+  
   filterIngredients(value: string): Ingredient[] {
     const filterValue = value.toLowerCase();
     return this.allIngredients.filter(ingredient =>
       ingredient.name.toLowerCase().includes(filterValue)
-    );
-  }
+      );
+    }
+    
+    displayFn(ingredient: Ingredient): string {
+      return ingredient ? ingredient.name : '';
+    }
+    
+    redirectToRecipe(id: string) {
+      this.router.navigate(['/recipe'], { queryParams: { id: id } });
+      console.log("aaa");
+      console.log(id)
+    }
 
-  displayFn(ingredient: Ingredient): string {
-    return ingredient ? ingredient.name : '';
-  }
-
- 
+    submitIngredients() {
+      this.meals = []
+      const ingredientNames = this.selectedIngredients.map(ingredient => ingredient.name);
+      const requestBody = { ingredients: ingredientNames };
+      
+      this.http.post<any>('http://127.0.0.1:9000/get_food_with_ingredients', requestBody)
+      .subscribe(
+        (response) => {
+          console.log('Response from server:', response);
+          this.meals = response.map((meal: any) => ({
+            name: meal.strMeal,
+            image: meal.strMealThumb,
+            meal_id: meal.idMeal // Assuming there's an ID field in the response
+            
+            // You can map other fields as needed
+          }));
+        },
+        (error) => {
+          console.error('Error occurred while fetching meals:', error);
+          // Handle errors
+        }
+        );
+      }
+      
+      
 }

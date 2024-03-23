@@ -15,10 +15,14 @@
                 (input)="onInputChange($event)">
   
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" class="auto">
-            <mat-option *ngFor="let ingredient of filteredIngredients" [value]="ingredient" (click)="onOptionSelected(ingredient)">
-                <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
-                <span>{{ ingredient.name }}</span>
-                </mat-option>
+            <mat-option class="dropdown" *ngFor="let ingredient of filteredIngredients" [value]="ingredient" (click)="onOptionSelected(ingredient)">
+                
+                <div class="dropdown">
+                    <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
+                    <span>{{ ingredient.name }}</span>
+                </div>
+               
+            </mat-option>
              </mat-autocomplete>
         </mat-form-field>
 
@@ -35,16 +39,37 @@
                 
             </div>
         </div>
-  
-
-
 
 
 
     <button>
-        <a  class="butt" [routerLink]="['/resualt']">Submit Ingrediants</a>
+        <!-- [routerLink]="['/resualt']" -->
+        <a  class="butt" (click)="submitIngredients()" >Submit Ingrediants</a>
     </button>
     
+    <div class="all_food" > <!-- Only show recipes when not loading -->
+
+    <div class="food" *ngFor="let meal of meals">
+
+        <a (click)="redirectToRecipe(meal.meal_id)">
+          <img class="food_pic" [src]="meal.image" alt="">
+        </a>
+  
+        <div class="food_like">
+  
+          <a class="res_name" (click)="redirectToRecipe(meal.meal_id)">
+            <div class="name">
+                {{ meal.name }}
+              </div>
+          </a>
+  
+        </div>
+  
+      </div>
+    </div>
+
+
+
 
 </div>
 

@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CountryComponent } from '../country/country.component';
@@ -11,7 +12,8 @@ import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
             RouterModule,
             RandomRecipesComponent,
             CountryComponent,
-            AutocompleteComponent
+            AutocompleteComponent,
+            HttpClientModule
           ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
