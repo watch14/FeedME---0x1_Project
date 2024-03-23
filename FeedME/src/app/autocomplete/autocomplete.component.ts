@@ -3,13 +3,13 @@ import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, CommonModule} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-export interface  State {
-  flag: any;
+export interface State {
+  flag: string;
   name: string;
   population: string;
 }
@@ -30,11 +30,13 @@ export interface  State {
     ReactiveFormsModule,
     MatSlideToggleModule,
     AsyncPipe,
+    CommonModule
   ],
 })
 export class AutocompleteOverviewExample {
   stateCtrl = new FormControl('');
   filteredStates: Observable<State[]>;
+  selectedStates: State[] = [];
 
   states: State[] = [
     {
@@ -68,7 +70,20 @@ export class AutocompleteOverviewExample {
 
   private _filterStates(value: string): State[] {
     const filterValue = value.toLowerCase();
-    const filteredStates = this.states.filter(state => state.name.toLowerCase().includes(filterValue));
-    return filteredStates.slice(0, 2);
+    return this.states.filter(state => state.name.toLowerCase().includes(filterValue)).slice(0, 2);
+  }
+
+  removeSelectedState(state: State) {
+    const index = this.selectedStates.indexOf(state);
+    if (index >= 0) {
+      this.selectedStates.splice(index, 1);
+    }
+  }
+
+  addSelectedState(state: State) {
+    if (!this.selectedStates.some(s => s.name === state.name)) {
+      this.selectedStates.push(state);
+      this.stateCtrl.setValue(''); // Reset the input text
+    }
   }
 }
