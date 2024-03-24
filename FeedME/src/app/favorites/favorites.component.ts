@@ -18,6 +18,42 @@ import { Router } from '@angular/router';
   styleUrl: './favorites.component.css'
 })
 export class FavoritesComponent implements OnInit {
+  countries: { strArea: string }[] = [
+    { strArea: 'American' },
+    { strArea: 'British' },
+    { strArea: 'Canadian' },
+    { strArea: 'Chinese' },
+    { strArea: 'Croatian' },
+    { strArea: 'Dutch' },
+    { strArea: 'Egyptian' }, // African country
+    { strArea: 'Filipino' },
+    { strArea: 'French' },
+    { strArea: 'Greek' },
+    { strArea: 'Indian' },
+    { strArea: 'Irish' },
+    { strArea: 'Italian' },
+    { strArea: 'Jamaican' },
+    { strArea: 'Japanese' },
+    { strArea: 'Kenyan' }, // African country
+    { strArea: 'Malaysian' },
+    { strArea: 'Mexican' },
+    { strArea: 'Moroccan' },
+    { strArea: 'Polish' },
+    { strArea: 'Portuguese' },
+    { strArea: 'Russian' },
+    { strArea: 'Spanish' },
+    { strArea: 'Thai' },
+    { strArea: 'Tunisian' }, // African country
+    { strArea: 'Turkish' },
+    { strArea: 'Vietnamese' },
+    { strArea: 'Unknown' },
+  ];
+
+  getFlagImageUrl(country: string): string {
+    return `../../assets/images/flags/${country}.svg`;
+  }
+
+
   countryName: string;
   meals: any[] = []; // Array to store fetched meals
 

@@ -9,6 +9,7 @@ import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/p
 import { Router } from '@angular/router';
 import { LineBreakAfterPeriodPipe } from '../line-break-after-period.pipe';
 import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
+import { CountryComponent } from '../country/country.component';
 
 @Component({
   selector: 'app-recipe',
@@ -19,6 +20,7 @@ import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
             MatProgressSpinnerModule,
             LineBreakAfterPeriodPipe,
             YouTubePlayerModule,
+            CountryComponent
           ],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.css'
