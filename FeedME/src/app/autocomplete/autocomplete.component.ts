@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 export interface Ingredient {
   name: string;
@@ -32,7 +33,8 @@ export interface Ingredient {
     AsyncPipe,
     CommonModule,
     MatAutocompleteModule,
-    RouterLink
+    RouterLink,
+    MatProgressSpinner
   ],
 })
 
@@ -43,95 +45,91 @@ export class AutocompleteComponent {
   allIngredients: Ingredient[] = [];
   filteredIngredients: Ingredient[] = [];
   selectedIngredients: Ingredient[] = [];
-  @ViewChild('auto') auto!: MatAutocompleteTrigger;
-  meals: { name: string, image: string , meal_id: string}[] = [];
+  @ViewChild('auto') auto: any;
+  meals: { name: string, image: string, meal_id: string }[] = [];
+  loading: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  
   ngOnInit(): void {
     this.fetchIngredients();
   }
-  
+
   private fetchIngredients(): void {
     this.http.get<Ingredient[]>('http://127.0.0.1:9000/ingredients')
-    .subscribe(ingredients => {
-      this.allIngredients = ingredients;
-      this.filteredIngredients = [...this.allIngredients];
-    });
+      .subscribe(ingredients => {
+        this.allIngredients = ingredients;
+        this.filteredIngredients = [...this.allIngredients];
+      });
   }
-  
+
   onOptionSelected(ingredient: Ingredient) {
     this.addSelectedIngredient(ingredient);
   }
-  
+
   removeSelectedIngredient(ingredient: Ingredient) {
     const index = this.selectedIngredients.indexOf(ingredient);
     if (index !== -1) {
       this.selectedIngredients.splice(index, 1);
-      this.filteredIngredients.push(ingredient); // Add the ingredient back to filteredIngredients
+      this.filteredIngredients.push(ingredient);
     }
   }
-  
+
   addSelectedIngredient(ingredient: Ingredient) {
     if (!this.selectedIngredients.some(s => s.name === ingredient.name)) {
       this.selectedIngredients.push(ingredient);
-      this.filteredIngredients = this.filteredIngredients.filter(item => item.name !== ingredient.name); // Remove the selected ingredient from filteredIngredients
-      this.ingredientCtrl.setValue(''); // Reset the input text
+      this.filteredIngredients = this.filteredIngredients.filter(item => item.name !== ingredient.name);
+      this.ingredientCtrl.setValue('');
     }
   }
-  
+
   onInputChange(event: any) {
     const inputText = event.target.value.trim();
     if (inputText.length >= 1) {
       this.filteredIngredients = this.filterIngredients(inputText).slice(0, 10);
       this.auto.openPanel();
     } else {
-      this.filteredIngredients = [...this.allIngredients]; // Show all ingredients if input text is less than 2 characters
+      this.filteredIngredients = [...this.allIngredients];
       this.auto.closePanel();
     }
   }
-  
+
   filterIngredients(value: string): Ingredient[] {
     const filterValue = value.toLowerCase();
     return this.allIngredients.filter(ingredient =>
       ingredient.name.toLowerCase().includes(filterValue)
-      );
-    }
-    
-    displayFn(ingredient: Ingredient): string {
-      return ingredient ? ingredient.name : '';
-    }
-    
-    redirectToRecipe(id: string) {
-      this.router.navigate(['/recipe'], { queryParams: { id: id } });
-      console.log("aaa");
-      console.log(id)
-    }
+    );
+  }
 
-    submitIngredients() {
-      this.meals = []
-      const ingredientNames = this.selectedIngredients.map(ingredient => ingredient.name);
-      const requestBody = { ingredients: ingredientNames };
-      
-      this.http.post<any>('http://127.0.0.1:9000/get_food_with_ingredients', requestBody)
+  displayFn(ingredient: Ingredient): string {
+    return ingredient ? ingredient.name : '';
+  }
+
+  redirectToRecipe(id: string) {
+    this.router.navigate(['/recipe'], { queryParams: { id: id } });
+  }
+
+  submitIngredients() {
+    this.loading = true;
+    this.meals = [];
+    const ingredientNames = this.selectedIngredients.map(ingredient => ingredient.name);
+    const requestBody = { ingredients: ingredientNames };
+
+    this.http.post<any>('http://127.0.0.1:9000/get_food_with_ingredients', requestBody)
       .subscribe(
         (response) => {
           console.log('Response from server:', response);
           this.meals = response.map((meal: any) => ({
             name: meal.strMeal,
             image: meal.strMealThumb,
-            meal_id: meal.idMeal // Assuming there's an ID field in the response
-            
-            // You can map other fields as needed
+            meal_id: meal.idMeal
           }));
+          this.loading = false;
         },
         (error) => {
           console.error('Error occurred while fetching meals:', error);
-          // Handle errors
+          this.loading = false;
         }
-        );
-      }
-      
-      
+      );
+  }
 }

@@ -1,25 +1,11 @@
-
 <!-- flags -->
-
-
 <div class="country">
-
     <h1>Recipes by Country</h1>
-
     <div class="flags">
-        <img class="fla" src="../../assets/images/flags/Ellipse 10.png"  alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 11.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 12.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 13.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 14.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 15.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 3.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 4.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 5.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 6.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 7.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 8.png" alt="">
-        <img class="fla" src="../../assets/images/flags/Ellipse 9.png" alt="">
+        <a *ngFor="let country of countries"
+           (click)="redirectToRecipe(country.strArea.toLowerCase())"
+           [routerLink]="['/favorite']">
+            <img [src]="getFlagImageUrl(country.strArea)" class="fla">
+        </a>
     </div>
-
 </div>

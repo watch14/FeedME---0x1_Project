@@ -42,4 +42,25 @@ p{
     align-content: center;
     gap: 20px 28px;
     margin-top: 0px;
+
+}
+
+img {
+    border-radius: 100%;
+    overflow: hidden;
+    transition: background-color 0.5s, 
+                border-color 0.8s, 
+                box-shadow 0.8s ,
+                transform 0.3s ease; /* Adding transition */
+
+}
+
+img:hover {
+    transform: scale(1.1); /* Zoom in effect on hover */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
+}
+
+a {
+        cursor: pointer;
+
 }

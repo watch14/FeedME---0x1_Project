@@ -26,7 +26,7 @@
              </mat-autocomplete>
         </mat-form-field>
 
-        <!-- Display the input for selected ingredients -->
+        <!-- display the input for selected ingredients -->
         <div class="selected-ingredients-container">
 
             <div class="ingrid" *ngFor="let selectedIngredient of selectedIngredients">
@@ -42,31 +42,27 @@
 
 
 
-    <button>
-        <!-- [routerLink]="['/resualt']" -->
-        <a  class="butt" (click)="submitIngredients()" >Submit Ingrediants</a>
-    </button>
-    
-    <div class="all_food" > <!-- Only show recipes when not loading -->
+        <button>
+          <a class="butt" (click)="submitIngredients()">Submit Ingredients</a>
+        </button>
 
-    <div class="food" *ngFor="let meal of meals">
+        <!-- loading -->
+        <mat-spinner *ngIf="loading"></mat-spinner>
 
-        <a (click)="redirectToRecipe(meal.meal_id)">
-          <img class="food_pic" [src]="meal.image" alt="">
-        </a>
-  
-        <div class="food_like">
-  
-          <a class="res_name" (click)="redirectToRecipe(meal.meal_id)">
-            <div class="name">
-                {{ meal.name }}
-              </div>
-          </a>
-  
+
+        <div class="all_food" *ngIf="!loading"> <!-- Show recipes when not loading -->
+          <div class="food" *ngFor="let meal of meals">
+            <a (click)="redirectToRecipe(meal.meal_id)">
+              <img class="food_pic" [src]="meal.image" alt="">
+            </a>
+            <div class="food_like">
+              <a class="res_name" (click)="redirectToRecipe(meal.meal_id)">
+                <div class="name">{{ meal.name }}</div>
+              </a>
+            </div>
+          </div>
         </div>
-  
-      </div>
-    </div>
+        
 
 
 
