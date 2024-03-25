@@ -11,13 +11,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 20px 10%;
+    padding: 10px 10%;
 }
 
 .footer_all p {
     white-space: nowrap;
     color: white;
-    padding: 1.4rem;
+    padding: 15px;
 }
 
 .footer_all a {
@@ -90,5 +90,17 @@ a:hover::before {
 }
 
 .footer-content {
-    padding: 100px 0 50px 0;
+    padding: 70px 0 10px 0;
+}
+
+h4 {
+    white-space: nowrap;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #55433C;
 }
