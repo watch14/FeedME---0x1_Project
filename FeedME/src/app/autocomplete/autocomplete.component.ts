@@ -48,6 +48,7 @@ export class AutocompleteComponent {
   @ViewChild('auto') auto: any;
   meals: { name: string, image: string, meal_id: string }[] = [];
   loading: boolean = false;
+  showNoRecipesMessage: boolean = false; // Control the visibility of the message
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -125,6 +126,7 @@ export class AutocompleteComponent {
             meal_id: meal.idMeal
           }));
           this.loading = false;
+          this.showNoRecipesMessage = this.meals.length === 0; // Show the message if no recipes found
         },
         (error) => {
           console.error('Error occurred while fetching meals:', error);

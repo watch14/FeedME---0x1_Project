@@ -50,23 +50,20 @@
         <mat-spinner *ngIf="loading"></mat-spinner>
 
 
-        <div class="all_food" *ngIf="!loading"> <!-- Show recipes when not loading -->
-          <div class="food" *ngFor="let meal of meals">
-            <a (click)="redirectToRecipe(meal.meal_id)">
+        <div class="all_food" *ngIf="!loading">
+          <!-- Show recipes if available -->
+          <div class="food" *ngIf="meals.length > 0">
+            <a (click)="redirectToRecipe(meal.meal_id)" *ngFor="let meal of meals">
               <img class="food_pic" [src]="meal.image" alt="">
+              <div class="food_like">
+                <a class="res_name">
+                  <div class="name">{{ meal.name }}</div>
+                </a>
+              </div>
             </a>
-            <div class="food_like">
-              <a class="res_name" (click)="redirectToRecipe(meal.meal_id)">
-                <div class="name">{{ meal.name }}</div>
-              </a>
-            </div>
+          </div>
+          <!-- Container for the message -->
+          <div class="no-recipes-message-container" *ngIf="showNoRecipesMessage">
+            <h2>No recipes found for the selected combination of ingredients.</h2>
           </div>
         </div>
-        
-
-
-
-
-</div>
-
-  
