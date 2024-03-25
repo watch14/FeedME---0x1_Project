@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import requests
 from pymongo import MongoClient
 from bson.objectid import ObjectId
@@ -10,6 +11,23 @@ db = client['TheMealDB']
 meals_collection = db['meal']
 
 app = Flask(__name__)
+CORS(app) 
+
+
+## Fetch Ingredients ##
+## TEST ## GET http://127.0.0.1:9000/ingredients
+@app.route('/ingredients', methods=['GET'])
+def get_ingredients():
+    url = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+    response = requests.get(url)
+    data = response.json()
+
+    ingredients = [{"name": ingredient['strIngredient'], "image": f"https://www.themealdb.com/images/ingredients/{ingredient['strIngredient']}-Small.png"} for ingredient in data['meals']]
+
+    # ingredients = [{"name": ingredient['strIngredient'], "image": f"https://www.themealdb.com/images/ingredients/{ingredient['strIngredient']}-Small.png"} for ingredient in data['meals']]
+
+    return jsonify(ingredients)
+
 
 ## Search ##
 ## TEST ## GET http://127.0.0.1:9000/search/Arrabiata
@@ -52,33 +70,39 @@ def search_meal(name):
 @app.route('/get_food_with_ingredients', methods=['POST'])
 def get_food_with_ingredients():
     data = request.json
-    ingredients = data['ingredients']  # List of ingredients
+    ingredients = data.get('ingredients', [])  # List of ingredients
 
-    meals_count = {}
+    meal_ids_with_ingredients = set()
 
-    # Fetch meals for each ingredient
+    # Fetch meals for each ingredient and find common meals
     for ingredient in ingredients:
         url = f"https://www.themealdb.com/api/json/v1/1/filter.php?i={ingredient}"
-        response = requests.get(url)
-        meals_data = response.json()
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
+            meals_data = response.json()
+        except requests.RequestException as e:
+            return jsonify({'error': str(e)}), 500  # Return an error response if request fails
 
-        if meals_data["meals"]:
-            for meal in meals_data["meals"]:
-                meal_id = meal["idMeal"]
-                if meal_id in meals_count:
-                    meals_count[meal_id]["count"] += 1
-                else:
-                    meals_count[meal_id] = {"count": 1, "meal_id": meal_id}
+        if meals_data.get("meals"):
+            meal_ids_with_ingredient = {meal["idMeal"] for meal in meals_data["meals"]}
+            if not meal_ids_with_ingredients:
+                meal_ids_with_ingredients = meal_ids_with_ingredient
+            else:
+                meal_ids_with_ingredients.intersection_update(meal_ids_with_ingredient)
 
-    # Fetch detailed info for meals with the highest counts
+    # Fetch detailed info for common meals
     meal_details = []
-    for meal_info in meals_count.values():
-        meal_id = meal_info["meal_id"]
+    for meal_id in meal_ids_with_ingredients:
         detail_url = f"https://www.themealdb.com/api/json/v1/1/lookup.php?i={meal_id}"
-        response = requests.get(detail_url)
-        detail_data = response.json()
+        try:
+            response = requests.get(detail_url)
+            response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
+            detail_data = response.json()
+        except requests.RequestException as e:
+            return jsonify({'error': str(e)}), 500  # Return an error response if request fails
 
-        if detail_data["meals"]:
+        if detail_data.get("meals"):
             meal_detail = detail_data["meals"][0]
             ingredients = []
             for i in range(1, 21):
@@ -86,7 +110,7 @@ def get_food_with_ingredients():
                 measure = meal_detail.get(f'strMeasure{i}')
                 if ingredient and ingredient.strip() and measure and measure.strip():
                     ingredients.append(f"{ingredient}: {measure}")
-            
+
             meal_details.append({
                 "strMeal": meal_detail["strMeal"],
                 "strCategory": meal_detail["strCategory"],
@@ -100,6 +124,12 @@ def get_food_with_ingredients():
     return jsonify(meal_details)
 
 
+
+
+
+def extract_youtube_id(youtube_url):
+    # Assuming the YouTube URL format is https://www.youtube.com/watch?v=VIDEO_ID
+    return youtube_url.split("=")[-1]
 
 ## Get meal by id ##
 ## TEST ## GET http://127.0.0.1:9000/get_meal_by_id/52928
@@ -127,10 +157,12 @@ def get_meal_by_id(meal_id):
         "strInstructions": meal_data["strInstructions"],
         "strMealThumb": meal_data["strMealThumb"],
         "strYoutube": meal_data["strYoutube"],
+        "youtube_id": extract_youtube_id(meal_data["strYoutube"]),  # Extract YouTube ID
         "ingredients": ingredients
     }
 
-    return jsonify(result)
+    return jsonify(result) 
+
 
 
 ## get meal by area ##
@@ -154,7 +186,7 @@ def get_random_meals():
     random_meals = []
     count = 0
 
-    while count < 10:
+    while count < 8:
         url = "https://www.themealdb.com/api/json/v1/1/random.php"
         response = requests.get(url)
         data = response.json()
