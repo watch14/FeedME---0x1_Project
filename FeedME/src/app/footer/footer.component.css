@@ -3,7 +3,8 @@ footer {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px -3px 15px, rgba(0, 0, 0, 0.23) 0px -3px 15px;
     letter-spacing: 0.2px;
-    margin-top: auto;
+    clear: both; /* Clear floats */
+    margin-top: auto; /* Add some space between content and footer */
 }
 
 .footer_all {
@@ -16,6 +17,7 @@ footer {
 .footer_all p {
     white-space: nowrap;
     color: white;
+    padding: 1.4rem;
 }
 
 .footer_all a {
@@ -38,7 +40,6 @@ p {
 }
 
 #Bad{
-
     margin: 0 auto;
     border: auto;
     border-radius: 10px;
@@ -46,24 +47,16 @@ p {
     margin-bottom: 20px;
     outline: none;
     border: 3px solid transparent #DE5F35;
-
 }
 
 input[type=text]:focus {
     border-color: #f04309;
 }
 
-
-
-
-
-
-
-
 a {
     color: #EDE9D0;
-  position: relative;
-  text-decoration: none;
+    position: relative;
+    text-decoration: none;
 }
 
 a::before {
@@ -83,4 +76,19 @@ a::before {
 a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.copyright-footer {
+    text-align: center;
+    color: #EDE9D0;
+    font-weight: bold;
+    font-size: larger;
+
+    margin-top: 4rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid white;
+}
+
+.footer-content {
+    padding: 100px 0 50px 0;
 }
