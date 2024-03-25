@@ -112,6 +112,7 @@ def get_food_with_ingredients():
                     ingredients.append(f"{ingredient}: {measure}")
 
             meal_details.append({
+                "idMeal": meal_id,
                 "strMeal": meal_detail["strMeal"],
                 "strCategory": meal_detail["strCategory"],
                 "strArea": meal_detail["strArea"],
