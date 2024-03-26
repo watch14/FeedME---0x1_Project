@@ -1,75 +1,91 @@
 <div class="select">
+  <h1>Choose Your Ingredient</h1>
 
-    <h1>Choose Your Ingredient</h1>
-    
-    
+  <!-- Display the autocomplete input -->
+  <mat-form-field class="field">
+    <mat-label>Type Here ...</mat-label>
+    <input
+      matInput
+      id="ingredientInput"
+      aria-label="Ingredient"
+      [matAutocomplete]="auto"
+      [formControl]="ingredientCtrl"
+      (input)="onInputChange($event)"
+    />
 
-      <!-- Display the autocomplete input -->
-      <mat-form-field class="field" >
-        <mat-label>Type Here ...</mat-label>
-        <input matInput
-                id="ingredientInput"
-                aria-label="Ingredient"
-                [matAutocomplete]="auto"
-                [formControl]="ingredientCtrl"
-                (input)="onInputChange($event)">
-  
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" class="auto">
-            <mat-option class="dropdown" *ngFor="let ingredient of filteredIngredients" [value]="ingredient" (click)="onOptionSelected(ingredient)">
-                
-                <div class="dropdown">
-                    <img alt="" class="example-option-img" [src]="ingredient.image" height="25">
-                    <span>{{ ingredient.name }}</span>
-                </div>
-               
-            </mat-option>
-             </mat-autocomplete>
-        </mat-form-field>
-
-        <!-- display the input for selected ingredients -->
-        <div class="selected-ingredients-container">
-
-            <div class="ingrid" *ngFor="let selectedIngredient of selectedIngredients">
-
-                <img alt="" class="example-img" [src]="selectedIngredient.image" height="25">
-
-                <span>{{ selectedIngredient.name }}</span>
-
-                <img (click)="removeSelectedIngredient(selectedIngredient)" class="close" src="../../assets/images/ingrediants/cross.png">
-                
-            </div>
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+      class="auto"
+    >
+      <mat-option
+        class="dropdown"
+        *ngFor="let ingredient of filteredIngredients"
+        [value]="ingredient"
+        (click)="onOptionSelected(ingredient)"
+      >
+        <div class="dropdown">
+          <img
+            alt=""
+            class="example-option-img"
+            [src]="ingredient.image"
+            height="25"
+          />
+          <span>{{ ingredient.name }}</span>
         </div>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 
+  <!-- display the input for selected ingredients -->
+  <div class="selected-ingredients-container">
+    <div class="ingrid" *ngFor="let selectedIngredient of selectedIngredients">
+      <img
+        alt=""
+        class="example-img"
+        [src]="selectedIngredient.image"
+        height="25"
+      />
 
+      <span>{{ selectedIngredient.name }}</span>
 
-        <button>
-          <a class="butt" (click)="submitIngredients()">Submit Ingredients</a>
-        </button>
+      <img
+        (click)="removeSelectedIngredient(selectedIngredient)"
+        class="close"
+        src="../../assets/images/ingrediants/cross.png"
+      />
+    </div>
+  </div>
 
-        <!-- loading -->
-        <mat-spinner *ngIf="loading"></mat-spinner>
+  <button>
+    <a class="butt" (click)="submitIngredients()">Submit Ingredients</a>
+  </button>
 
-        
-      
-        <div class="all_food" *ngIf="!loading"> <!-- Only show recipes when not loading -->
-          <div class="food-container" *ngFor="let meal of meals">
-            <a (click)="redirectToRecipe(meal.meal_id)" class="food-link">
-              <div class="food">
-                <img class="food_pic" [src]="meal.image" alt="">
-              </div>
-            </a>
-      
-            <div class="food_like">
+  <!-- loading -->
+  <mat-spinner *ngIf="loading"></mat-spinner>
+
+  <div class="all_food" *ngIf="!loading">
+    <!-- Only show recipes when not loading -->
+    <div class="food-container" *ngFor="let meal of meals">
+      <a (click)="redirectToRecipe(meal.meal_id)" class="food-link">
+        <div class="food">
+          <img class="food_pic" [src]="meal.image" alt="" />
+            <div class="name">{{ meal.name }}</div>
+            <img class="like" src="../../assets/images/food/like.svg" alt="">
+        </div>
+      </a>
+
+      <!-- <div class="food_like">
               <a class="res_name" (click)="redirectToRecipe(meal.meal_id)">
                 <div class="name">{{ meal.name }}</div>
               </a>
               <img class="like" src="../../assets/images/food/like.svg" alt="">
-            </div>
-          </div>
-        </div>
-      
-        <!-- Message for no recipes available -->
-        <div class="no-recipes-message-container" *ngIf="showNoRecipesMessage">
-          <h2>No recipes found for the selected combination of ingredients.</h2>
-        </div>
-      </div>
+            </div> -->
+    </div>
+  </div>
+
+  <!-- Message for no recipes available -->
+  <div class="no-recipes-message-container" *ngIf="showNoRecipesMessage">
+    <h2>No recipes found for the selected combination of ingredients.</h2>
+  </div>
+</div>

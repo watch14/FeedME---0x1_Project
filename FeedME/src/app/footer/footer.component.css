@@ -78,6 +78,7 @@ a:hover::before {
 }
 
 .footer-copyright {
+    font-size: large;
     text-align: center;
     margin: 1rem;
     padding: 1.2rem 0;
