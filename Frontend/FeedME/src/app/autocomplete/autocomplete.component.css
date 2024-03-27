@@ -177,16 +177,6 @@ a {
   align-items: center;
 }
 
-.like {
-  margin-left: 25px; 
-  width: 20px;
-  height: auto;
-  margin-top: 10px;
-}
-
-.like:hover {
-  background: url(../../assets/images/food/liked.svg);
-}
 
 .name {
   margin: 15px 0 5px 0;
