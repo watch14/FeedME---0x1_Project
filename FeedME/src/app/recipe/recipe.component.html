@@ -15,7 +15,7 @@
             
             <div class="list1">
               <ul *ngFor="let ingredient of meal.ingredients" class="ingredient-list">
-                <li>{{ ingredient }}</li>
+                <li style="white-space: nowrap">{{ ingredient.split(':')[0] }}: <span style="font-weight: bold">{{ ingredient.split(':')[1] }}</span></li>
               </ul>
             </div>
 
