@@ -79,6 +79,7 @@ button:hover {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .example-img {
@@ -135,7 +136,7 @@ a {
   flex-flow: row wrap;
   justify-content: center;
   gap: 40px 44px;
-  padding: 28px 0px;
+  padding: 28px 24px;
 }
 
 .food {
@@ -189,4 +190,7 @@ a {
 
 .name {
   margin: 15px 0 5px 0;
+}
+.all_food{
+  padding-inline-start: 0 24px;
 }
