@@ -19,15 +19,18 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
+
+    margin: 0 auto;
+    max-width: 1360px;
+    width: 100%;
 }
 
-.header_logo {
+.logo{
     width: 100px;
     height: auto;
-    height: 20px;
-
+    height: 20px;  
+    padding: 20px 0 20px 24px;
+    
 }
 
 .header_text {
@@ -36,7 +39,7 @@ img {
     align-items: center;
     gap: 0 32px;
     width: 32%;
-    padding: 20px 0px;
+    padding: 20px 24px 20px 0;
 }
 
 p ,a{

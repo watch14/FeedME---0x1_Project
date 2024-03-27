@@ -1,12 +1,14 @@
 .about {
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
-    margin: 150px 15% 100px 15%;
     font-size: 16px;
     border-radius: 10px;
     padding: 20px 4% 4%;
     background-color: #f2f2f2;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
     border: 2px solid #DE5F35;
+    margin: 48px auto;
+    max-width: 900px;
+    width: 100%;
 }
 
 

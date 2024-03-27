@@ -1,35 +1,44 @@
-<mat-spinner *ngIf="loading"></mat-spinner>
+<div class="mat">
+
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="cont">
 
 <div class="container" *ngIf="!loading">
-    <div class="inside">
-        <h1 class="Title">{{ meal.name }}</h1>
-    </div>
+  
 
-    <div class="information">
-      <div class="img">
-            <img [src]="meal.image" alt="{{ meal.name }}">
-          </div>
-          
-          <div class="lists">
-            <h2>Ingredients:</h2>
-            
-            <div class="list1">
-              <ul *ngFor="let ingredient of meal.ingredients" class="ingredient-list">
-                <li style="white-space: nowrap">{{ ingredient.split(':')[0] }}: <span style="font-weight: bold">{{ ingredient.split(':')[1] }}</span></li>
-              </ul>
-            </div>
-
-            
-            <div class="par">
-              <h2>Instructions:</h2>
-              <div class="inst-info" [innerHTML]="meal.description | lineBreakAfterPeriod"></div>
-            </div>
-
-          </div>
-          
-        <youtube-player class="vid" videoId="{{meal.youtube_id}}" ></youtube-player>
-        <!-- placeholderImageQuality="high" -->
+      <div class="inside">
+          <h1 class="Title">{{ meal.name }}</h1>
       </div>
+  
+      <div class="information">
+        <div class="img">
+              <img [src]="meal.image" alt="{{ meal.name }}">
+            </div>
+            
+            <div class="lists">
+              <h2>Ingredients:</h2>
+              
+              <div class="list1">
+                <ul *ngFor="let ingredient of meal.ingredients" class="ingredient-list">
+                  <li style="white-space: nowrap">{{ ingredient.split(':')[0] }}: <span style="font-weight: bold">{{ ingredient.split(':')[1] }}</span></li>
+                </ul>
+              </div>
+  
+              
+              <div class="par">
+                <h2>Instructions:</h2>
+                <div class="inst-info" [innerHTML]="meal.description | lineBreakAfterPeriod"></div>
+              </div>
+  
+            </div>
+            
+          <youtube-player class="vid" videoId="{{meal.youtube_id}}" ></youtube-player>
+          <!-- placeholderImageQuality="high" -->
+        </div>
+  
+  </div>
 
 </div>
 
