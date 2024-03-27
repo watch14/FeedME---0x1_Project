@@ -75,7 +75,7 @@ export class RecipeComponent {
   fetchRandomRecipe() {
     this.loading = true;
     this.http
-      .get<any>('http://watch14.pythonanywhere.com/get_meal_by_id/' + this.mealID)
+      .get<any>('https://watch14.pythonanywhere.com/get_meal_by_id/' + this.mealID)
       .subscribe(
         (response) => {
           this.meal.name = response.strMeal;

@@ -57,7 +57,7 @@ export class AutocompleteComponent {
   }
 
   private fetchIngredients(): void {
-    this.http.get<Ingredient[]>('http://watch14.pythonanywhere.com/ingredients')
+    this.http.get<Ingredient[]>('https://watch14.pythonanywhere.com/ingredients')
       .subscribe(ingredients => {
         this.allIngredients = ingredients;
         this.filteredIngredients = [...this.allIngredients];
@@ -116,7 +116,7 @@ export class AutocompleteComponent {
     const ingredientNames = this.selectedIngredients.map(ingredient => ingredient.name);
     const requestBody = { ingredients: ingredientNames };
 
-    this.http.post<any>('http://watch14.pythonanywhere.com/get_food_with_ingredients', requestBody)
+    this.http.post<any>('https://watch14.pythonanywhere.com/get_food_with_ingredients', requestBody)
       .subscribe(
         (response) => {
           console.log('Response from server:', response);

@@ -34,7 +34,7 @@ export class RandomRecipesComponent {
   fetchRandomRecipes() {
     this.loading = true; // Set loading flag to true when fetching data
     
-    const url = 'http://watch14.pythonanywhere.com/random';
+    const url = 'https://watch14.pythonanywhere.com/random';
     this.http.get<any[]>(url).subscribe(
       (data) => {
         console.log(data);

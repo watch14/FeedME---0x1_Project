@@ -64,7 +64,7 @@ export class FavoritesComponent implements OnInit {
       this.countryName = params['country'];
       
       // Fetch meals for the specified country
-      this.http.get<any[]>(`http://watch14.pythonanywhere.com/get_meals_by_area/${this.countryName}`)
+      this.http.get<any[]>(`https://watch14.pythonanywhere.com/get_meals_by_area/${this.countryName}`)
         .subscribe(response => {
           // Log the response in the console
           // Assign the response to the meals array for further use in the template
