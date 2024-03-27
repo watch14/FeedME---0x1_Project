@@ -77,6 +77,22 @@ button:hover {
   font-size: 28px;
 }
 
+p, a{
+  text-overflow: ellipsis;
+  cursor: pointer;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0px;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 186px;
+  text-align: center;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
