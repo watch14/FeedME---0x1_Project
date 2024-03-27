@@ -10,12 +10,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 20px 10%;
+    padding: 100px 10%;
 }
 
 .footer_all p {
     white-space: nowrap;
     color: white;
+    padding-top: 1.2rem;
 }
 
 .footer_all a {
@@ -38,7 +39,6 @@ p {
 }
 
 #Bad{
-
     margin: 0 auto;
     border: auto;
     border-radius: 10px;
@@ -46,19 +46,11 @@ p {
     margin-bottom: 20px;
     outline: none;
     border: 3px solid transparent #DE5F35;
-
 }
 
 input[type=text]:focus {
     border-color: #f04309;
 }
-
-
-
-
-
-
-
 
 a {
     color: #EDE9D0;
@@ -83,4 +75,12 @@ a::before {
 a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.footer-copyright {
+    text-align: center;
+    margin: 1rem;
+    padding: 1.2rem 0;
+    color: #EDE9D0;
+    border-top: 1px solid white;
 }
