@@ -62,7 +62,7 @@
   </button>
 
   <!-- loading -->
-  <mat-spinner *ngIf="loading"></mat-spinner>
+  <mat-spinner *ngIf="loading" color="warn"></mat-spinner>
 
   <div class="all_food" *ngIf="!loading">
     <!-- Only show recipes when not loading -->
@@ -70,15 +70,13 @@
       <a (click)="redirectToRecipe(meal.meal_id)" class="food-link">
         <div class="food">
           <img class="food_pic" [src]="meal.image" alt="" />
-            <div class="name">{{ meal.name }}</div>
+          <div class="name">{{ meal.name }}</div>
         </div>
       </a>
-      
-      
-      
-        <!-- Message for no recipes available -->
-        <div class="no-recipes-message-container" *ngIf="showNoRecipesMessage">
-          <h2>Apologies, no recipes found for these ingredients.</h2>
-        </div>
-</div>
-
+    </div>
+  
+    <!-- Message for no recipes available -->
+    <div class="no-recipes-message-container" *ngIf="showNoRecipesMessage && meals.length === 0">
+      <h2>Apologies, no recipes found for these ingredients.</h2>
+    </div>
+  </div>

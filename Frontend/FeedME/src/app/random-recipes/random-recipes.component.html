@@ -1,9 +1,9 @@
 <div class="random_recipes">
 
-  <mat-spinner *ngIf="loading"></mat-spinner>
-
-  <h1 *ngIf="!loading">Random Recipes</h1>
-
+  
+  <h1 >Random Recipes</h1>
+  
+  <mat-spinner *ngIf="loading" color="warn"></mat-spinner>
   <div class="all_food" *ngIf="!loading"> <!-- Only show recipes when not loading -->
 
     <div class="food" *ngFor="let meal of meals">
