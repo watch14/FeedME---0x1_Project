@@ -5,6 +5,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 export const routes: Routes = [
     {'path': '', component:HomePageComponent},
@@ -13,4 +14,5 @@ export const routes: Routes = [
     {'path': 'favorite', component:FavoritesComponent},
     {'path': 'contact_us', component:ContactUsComponent},
     {'path': 'about_us', component:AboutUsComponent},
+    {'path': 'landingpage', component:LandingPageComponent},
 ];
