@@ -44,4 +44,4 @@ FeedME was created by Maamoun Chebbi ([GitHub](https://github.com/watch14)) and 
 # Authors ✒️
 Maamoun Chebbi <[Github@watch14](https://github.com/watch14)> - Chebbimaamoun@gmail.com
 
-Iheb Chaoued <[Github@IhebChaoued](https://github.com/IhebChaoued)>
+Iheb Chaoued <[Github@IhebChaoued](https://github.com/IhebChaoued)> - ihebchaoued@gmail.com
