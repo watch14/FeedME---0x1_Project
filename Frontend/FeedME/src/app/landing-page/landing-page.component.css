@@ -1,0 +1,197 @@
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 120px;
+}
+
+.introv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 120px;
+}
+
+.highlight {
+    color: #de5f35;
+}
+
+.foody {
+    width: 600px;
+    height: 600px;
+    margin-left: 200px;
+}
+
+.foodyv2 {
+    width: 600px;
+    height: 600px;
+    margin-right: 200px;
+}
+
+h2 {
+    padding-bottom: 50px;
+    font-size: 40px;
+}
+
+.landing {
+    margin-top: 150px;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+   } 
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #DE5F35;
+    top: 0;
+}
+
+.container {
+    display: flex;
+    margin: 50px auto;
+    width: 70%;
+}
+
+.card {
+    width: 300px;
+    height: 350px;
+    margin: 0 auto;
+    background-color: #ede9d0;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0px 10px 10px rgb(73, 70, 92);
+    transition: 0.5s;
+}
+  
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 10px black;
+}
+  
+.top {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+  
+.circle {
+    padding: 0 4px;
+}
+  
+.circle2 {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 5px;
+}
+  
+.header {
+    margin: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+  
+#title2 {
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+  
+.code-container {
+    text-align: center;
+}
+
+#code {
+    width: 270px;
+    height: 300px;
+    resize: none;
+    background-color: #FFFDD0;
+    border-radius: 5px;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#code:focus {
+    outline: none !important;
+}
+
+
+
+.perso {
+    width: 190px;
+    height: 254px;
+    background-color: #DE5F35;
+    border: none;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: relative;
+    margin: auto;
+    font-family: inherit;
+    box-shadow: 0px 10px 10px rgb(73, 70, 92);
+    transition: 0.5s;
+  }
+
+.perso:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 10px black;
+}
+  
+  .perso span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  .perso .job {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  .perso .img {
+    width: 70px;
+    height: 70px;
+    background: #e8e8e8;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .perso button {
+    padding: 8px 25px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 30px;
+    background: #e8e8e8;
+    color: #111111;
+    font-weight: 600;
+  }
+  
+  .perso button:hover {
+    background: #212121;
+    color: #ffffff;
+  }
