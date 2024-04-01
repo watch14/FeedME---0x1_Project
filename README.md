@@ -1,4 +1,4 @@
-![Alt text](Pictures/logo-Orange.png)
+![](Pictures/logo-Orange.png)
 # 
 
 # FeedME - Meal Planner Web Application 🥞
