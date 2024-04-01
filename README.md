@@ -1,7 +1,7 @@
-![](Pictures/logo-Orange.png)
+![https://feedme-now.netlify.app](Pictures/logo-Orange.png)
 # 
 
-# FeedME - Meal Planner Web Application 🥞
+# [FeedME - Meal Planner Web Application 🥞](https://feedme-now.netlify.app)
 
 Welcome to FeedME, a web application designed to help users plan their meals based on the ingredients they have on hand. With FeedME, users can easily discover recipes that match their available ingredients, explore random recipes, and find recipes from various countries.
 
@@ -29,13 +29,13 @@ Here are some screenshots showcasing our application:
 ### Homepage
 The homepage features a user-friendly interface where you can select your ingredients and get the results after clicking the "Submit Ingredients" button. Additionally, there is a section for discovering random recipes and flags representing countries with recipes available.
 
-![](Pictures/home_page.png)
+![https://feedme-now.netlify.app](Pictures/home_page.png)
 
 
 ### Recipe Page
 The recipe page provides detailed information about the selected recipe. It includes the recipe name, a picture of the meal, the list of ingredients, a description of the recipe, and a YouTube video demonstrating how to cook the meal.
 
-![](Pictures/recipe_page.png)
+![https://feedme-now.netlify.app/random_recipes](Pictures/recipe_page.png)
 
 ## Credits
 FeedME was created by Maamoun Chebbi <[Github@watch14](https://github.com/watch14)> 
