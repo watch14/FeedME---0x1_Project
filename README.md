@@ -38,8 +38,7 @@ The recipe page provides detailed information about the selected recipe. It incl
 ![](Pictures/recipe_page.png)
 
 ## Credits
-FeedME was created by Maamoun Chebbi <[Github@watch14](https://github.com/watch14)> 
-and Iheb Chaoued <[Github@IhebChaoued](https://github.com/IhebChaoued)>.
+FeedME was created by Maamoun Chebbi ([GitHub](https://github.com/watch14)) and Iheb Chaoued ([GitHub](https://github.com/IhebChaoued)) with passion and hard work. Our team is committed to delivering a user-friendly meal planning experience that helps users explore new recipes and cuisines from around the world.
 
 
 # Authors ✒️
