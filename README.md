@@ -29,13 +29,13 @@ Here are some screenshots showcasing our application:
 ### Homepage
 The homepage features a user-friendly interface where you can select your ingredients and get the results after clicking the "Submit Ingredients" button. Additionally, there is a section for discovering random recipes and flags representing countries with recipes available.
 
-![](pictures/home_page.png)
+![](Pictures/home_page.png)
 
 
 ### Recipe Page
 The recipe page provides detailed information about the selected recipe. It includes the recipe name, a picture of the meal, the list of ingredients, a description of the recipe, and a YouTube video demonstrating how to cook the meal.
 
-![](pictures/recipe_page.png)
+![](Pictures/recipe_page.png)
 
 ## Credits
 FeedME was created by Maamoun Chebbi <[Github@watch14](https://github.com/watch14)> 
