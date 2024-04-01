@@ -34,6 +34,7 @@ img {
 
 .ac {
     padding-left: 24px;
+    padding-top: 36px;
 }
 
 .subscribe {
@@ -56,6 +57,7 @@ p {
     font-size: 16px;
     font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
 
 #Bad{
     margin: 0 auto;
