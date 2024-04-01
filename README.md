@@ -37,8 +37,6 @@ The recipe page provides detailed information about the selected recipe. It incl
 
 ![Recipe Page](/pictures/recipe_page.png)
 
-
-
 ## Credits
 FeedME was created by Maamoun Chebbi <[Github@watch14](https://github.com/watch14)> 
 and Iheb Chaoued <[Github@IhebChaoued](https://github.com/IhebChaoued)>.
