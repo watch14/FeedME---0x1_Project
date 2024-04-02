@@ -34,6 +34,24 @@ p {
     margin-right: 200px;
 }
 
+.diffingred {
+    width: 400px;
+    height: 350px;
+    margin-right: 200px;
+}
+
+.randomrecipes {
+    width: 400px;
+    height: 350px;
+    margin-left: 200px;
+}
+
+.Flags {
+    width: 400px;
+    height: 350px;
+    margin-right: 200px;
+}
+
 h2 {
     padding-bottom: 50px;
     font-size: 40px;
