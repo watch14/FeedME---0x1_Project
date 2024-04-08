@@ -1,9 +1,22 @@
+.all{
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 10px;
+    margin: 0px;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+
+    margin: 0px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
 .intro {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-top: 120px;
 }
 
 .introv2 {
@@ -11,7 +24,7 @@
     justify-content: center;
     align-items: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-top: 120px;
+    margin: 120px auto 50px;
 }
 
 .highlight {
@@ -19,7 +32,11 @@
 }
 
 p {
-    font-size: 20px;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 10px;
+    margin: 0px;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
 }
 
 .foody {
@@ -55,6 +72,11 @@ p {
 h2 {
     padding-bottom: 50px;
     font-size: 40px;
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 10px;
+    margin: 0px;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
 }
 
 .landing {
@@ -89,13 +111,13 @@ h2 {
     background-color: #ede9d0;
     border-radius: 8px;
     z-index: 1;
-    box-shadow: 0px 10px 10px rgb(73, 70, 92);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
     transition: 0.5s;
 }
   
 .card:hover {
     transform: translateY(-7px);
-    box-shadow: 0px 10px 10px black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 15px, rgba(0, 0, 0, 0.23) 0px 3px 15px;
 }
   
 .top {
